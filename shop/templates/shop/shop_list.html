@@ -3,21 +3,19 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h1>Item List</h1>
+            <h1>Shop List</h1>
 
             <table class="table table-bordered table-hover">
-            {% for item in item_list %}
+            {% for shop in shop_list %}
                 <tr>
                     <td>
                         {# TODO: URL Reverse 기능으로 개선 #}
-                        <a href="/shop/items/{{ item.pk }}/">
-                            {{ item.name }}
+                        <a href="/shop/{{ item.pk }}/">
+                            {{ shop.name }}
                         </a>
                     </td>
-                    <td>{{ item.desc }}</td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.created_at }}</td>
-                    <td>{{ item.updated_at }}</td>
+                    <td>{{ shop.desc }}</td>
+                    <td>{{ shop.address }}</td>
                 </tr>
             {% endfor %}
             </table>
